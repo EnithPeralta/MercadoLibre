@@ -14,13 +14,13 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   @override
- Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const HomePage(),
       routes: {
         '/inicio': (context) => const Login(),
-        '/registro':(context) => const Registrarse()
+        '/registro': (context) => const Registrarse()
       },
     );
   }
