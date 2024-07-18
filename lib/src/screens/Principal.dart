@@ -3,9 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:mercadolibre/interface/Categories.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class Principal extends StatefulWidget {
+  const Principal({super.key});
 
+  @override
+  State<Principal> createState() => _PrincipalState();
+}
+
+class _PrincipalState extends State<Principal> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,10 +22,11 @@ class HomePage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  const Icon(Icons.person_pin),
                   const Text('Mercado Libre'),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/inicio');
+                      Navigator.pushNamed(context, '/perfil');
                     },
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
@@ -29,7 +35,7 @@ class HomePage extends StatelessWidget {
                       backgroundColor: Colors.white,
                       foregroundColor: Colors.black,
                     ),
-                    child: const Text('Iniciar sesión'),
+                    child: const Text('Perfil'),
                   )
                 ],
               )),
