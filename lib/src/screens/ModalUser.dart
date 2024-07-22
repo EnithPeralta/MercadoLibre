@@ -3,13 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:mercadolibre/src/controller/ConsultaUsers.dart';
 
-ModalEventos(BuildContext context) {
-  fetchUsers().then((consultarUsers) {
-    consultarUsers = consultarUsers;
-  showBottomSheet(
-      context: context,
-      builder: (context) {
-        return Scaffold(
+modalUsuarios(BuildContext context) {
+  fetchUsers().then((fetchUsers) {
+    showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Scaffold(
             appBar: AppBar(
               actions: const [
                 Padding(
@@ -17,20 +16,21 @@ ModalEventos(BuildContext context) {
                   child: Icon(Icons.event_outlined),
                 )
               ],
-              backgroundColor: Colors.amber[200],
+              backgroundColor: Colors.amber[700],
               title: const Text("Usuarios"),
             ),
-            body: ListView.builder(
-              itemCount: consultarUsers.length,
-              itemBuilder: (context, index) {
+            body: 
+            ListView.builder(
+              itemCount: fetchUsers.length,
+              itemBuilder: (BuildContext context, index) {
                 return ListTile(
-                  title: Text(consultarUsers[index].name),
-                  subtitle: Text(consultarUsers[index].email),
+                  title: Text(fetchUsers[index].nombre),
+                  subtitle: Text(fetchUsers[index].email),
                   trailing: const Icon(Icons.delete_rounded),
                 );
               },
-            ));
-      }
-  );
-      });
+            )
+          );
+        });
+  });
 }

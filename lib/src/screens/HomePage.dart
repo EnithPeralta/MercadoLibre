@@ -27,9 +27,22 @@ class HomePage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                       backgroundColor: Colors.white,
-                      foregroundColor: Colors.black,
+                      foregroundColor: Colors.amber[700],
                     ),
                     child: const Text('Iniciar sesión'),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/registro');
+                    },
+                    style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.amber[700],
+                    ),
+                    child: const Text('Registrarse'),
                   )
                 ],
               )),
@@ -113,13 +126,10 @@ class HomePage extends StatelessWidget {
               icon: Icon(Icons.shop_2, size: 30.0, color: Colors.amber[700]),
               label: 'Comprar'),
           BottomNavigationBarItem(
-              icon:
-                  Icon(Icons.person_pin, size: 30.0, color: Colors.amber[700]),
-              label: 'Perfil'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.exit_to_app_rounded,
-                  size: 30.0, color: Colors.amber[700]),
-              label: 'Salir',)
+            icon: Icon(Icons.exit_to_app_rounded,
+                size: 30.0, color: Colors.amber[700]),
+            label: 'Salir',
+          )
         ]));
   }
 }

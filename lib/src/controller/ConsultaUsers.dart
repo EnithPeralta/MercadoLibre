@@ -1,24 +1,54 @@
-// ignore_for_file: file_names, prefer_typing_uninitialized_variables
+// ignore_for_file: file_names
 
+import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-Future<List<dynamic>> fetchUsers() async {
+//Metodo Get
+Future<List<Usuarios>> fetchUsers() async {
   final response = await http
-      .get(Uri.parse('https://back-mercadolibre.onrender.com/api/users'));
+      .get(Uri.parse('https://backend-mercadolibre.onrender.com/api/users'));
+
   if (response.statusCode == 200) {
-    print(response);
-    return jsonDecode(response.body);
+    List<dynamic> jsonList = jsonDecode(response.body);
+    return jsonList.map((json) => Usuarios.fromJson(json)).toList();
   } else {
-    throw Exception('Failed to load jewelry users');
+    throw Exception('Failed to load album');
   }
 }
 
-class Users {
-  final name;
-  final email;
-  const Users({required this.name, required this.email});
-  factory Users.fromJson(Map<String, dynamic> json) {
-    return Users(name: json['name'], email: json['email']);
+//Metodo Add
+
+Future<Usuarios> addUsers(String nombre, String email, String password) async {
+  final response = await http.post(
+      Uri.parse('https://backend-mercadolibre.onrender.com/api/users'),
+      headers: <String, String>{'Content-Type': 'application/json; charset=UTF-8',
+      },
+        body:jsonEncode(
+        <String, String>{"nombre":nombre,"email":email,"password":password}),
+      );
+        if (response.statusCode == 201) {
+        return Usuarios.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+      } else {
+        throw Exception('No es posible registrarse');
+      }
+}
+
+
+
+class Usuarios {
+  final String nombre;
+  final String email;
+
+  const Usuarios({
+    required this.nombre,
+    required this.email,
+  });
+
+  factory Usuarios.fromJson(Map<String, dynamic> json) {
+    return Usuarios(
+      nombre: json['nombre'],
+      email: json['email'],
+    );
   }
 }

@@ -46,7 +46,7 @@ class _MenUsersState extends State<MenUsers> {
                   leading: const Icon(Icons.connect_without_contact_rounded),
                   trailing: const Icon(Icons.arrow_circle_right_outlined),
                   onTap: () {
-                    ModalEventos(context);
+                    modalUsuarios(context);
                   })),
           Card(
               child: ListTile(
