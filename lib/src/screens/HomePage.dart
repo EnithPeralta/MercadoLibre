@@ -15,35 +15,33 @@ class HomePage extends StatelessWidget {
           title: Padding(
               padding: const EdgeInsets.only(top: 8.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   const Text('Mercado Libre'),
                   ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/inicio');
-                    },
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0),
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/inicio');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        backgroundColor: Colors.white,
+                        foregroundColor: Colors.amber[700],
                       ),
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.amber[700],
-                    ),
-                    child: const Text('Iniciar sesión'),
-                  ),
+                      child: const Icon(Icons.login_outlined)),
                   ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/registro');
-                    },
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0),
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/registro');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        backgroundColor: Colors.white,
+                        foregroundColor: Colors.amber[700],
                       ),
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.amber[700],
-                    ),
-                    child: const Text('Registrarse'),
-                  )
+                      child: const Icon(Icons.app_registration_rounded))
                 ],
               )),
         ),
@@ -57,7 +55,7 @@ class HomePage extends StatelessWidget {
                       child: TextField(
                         decoration: InputDecoration(
                             prefixIcon: const Icon(Icons.search),
-                            hintText: 'Buscar producto',
+                            hintText: 'Product search',
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(20),
                                 borderSide: BorderSide.none),
@@ -121,14 +119,14 @@ class HomePage extends StatelessWidget {
         bottomNavigationBar: BottomNavigationBar(items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.home, size: 30.0, color: Colors.amber[700]),
-              label: 'Inicio'),
+              label: 'Start'),
           BottomNavigationBarItem(
               icon: Icon(Icons.shop_2, size: 30.0, color: Colors.amber[700]),
-              label: 'Comprar'),
+              label: 'Shop'),
           BottomNavigationBarItem(
             icon: Icon(Icons.exit_to_app_rounded,
                 size: 30.0, color: Colors.amber[700]),
-            label: 'Salir',
+            label: 'Exit',
           )
         ]));
   }

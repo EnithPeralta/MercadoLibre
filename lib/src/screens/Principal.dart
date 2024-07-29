@@ -17,26 +17,12 @@ class _PrincipalState extends State<Principal> {
         appBar: AppBar(
           backgroundColor: Colors.amber[700],
           foregroundColor: Colors.white,
-          title: Padding(
-              padding: const EdgeInsets.only(top: 8.0),
+          title: const Padding(
+              padding: EdgeInsets.only(top: 8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Icon(Icons.person_pin),
-                  const Text('Mercado Libre'),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/perfil');
-                    },
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.black,
-                    ),
-                    child: const Text('Perfil'),
-                  )
+                  Text('Mercado Libre'),
                 ],
               )),
         ),
@@ -50,7 +36,7 @@ class _PrincipalState extends State<Principal> {
                       child: TextField(
                         decoration: InputDecoration(
                             prefixIcon: const Icon(Icons.search),
-                            hintText: 'Buscar producto',
+                            hintText: 'Product search',
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(20),
                                 borderSide: BorderSide.none),
@@ -114,18 +100,19 @@ class _PrincipalState extends State<Principal> {
         bottomNavigationBar: BottomNavigationBar(items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.home, size: 30.0, color: Colors.amber[700]),
-              label: 'Inicio'),
+              label: 'Home'),
           BottomNavigationBarItem(
               icon: Icon(Icons.shop_2, size: 30.0, color: Colors.amber[700]),
-              label: 'Comprar'),
+              label: 'Shop'),
           BottomNavigationBarItem(
               icon:
                   Icon(Icons.person_pin, size: 30.0, color: Colors.amber[700]),
-              label: 'Perfil'),
+              label: 'Profile'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.exit_to_app_rounded,
-                  size: 30.0, color: Colors.amber[700]),
-              label: 'Salir',)
+            icon: Icon(Icons.exit_to_app_rounded,
+                size: 30.0, color: Colors.amber[700]),
+            label: 'Exit',
+          )
         ]));
   }
 }

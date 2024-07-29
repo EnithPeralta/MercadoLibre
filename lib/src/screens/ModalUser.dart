@@ -17,7 +17,7 @@ modalUsuarios(BuildContext context) {
                 )
               ],
               backgroundColor: Colors.amber[700],
-              title: const Text("Usuarios"),
+              title: const Text("Users"),
             ),
             body: 
             ListView.builder(

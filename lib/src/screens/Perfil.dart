@@ -23,7 +23,7 @@ class _PerfilUsuarioState extends State<PerfilUsuario> {
               color: Colors.white,
             )),
         title: const Text(
-          "Perfil",
+          "Profile",
           style: TextStyle(color: Colors.white),
         ),
       ),
@@ -50,28 +50,28 @@ class _PerfilUsuarioState extends State<PerfilUsuario> {
                 children: [
                   ListTile(
                     leading: const Icon(Icons.person, color: Colors.amber),
-                    title: const Text("Genero"),
-                    trailing: const Text("Femenino"),
+                    title: const Text("Genre"),
+                    trailing: const Text("Feminine"),
                     onTap: () {},
                   ),
                   ListTile(
                     leading:
                         const Icon(Icons.cake_rounded, color: Colors.amber),
-                    title: const Text("Cumpleaños"),
+                    title: const Text("Birthday"),
                     trailing: const Text("12-07-2004"),
                     onTap: () {},
                   ),
                   ListTile(
                     leading:
                         const Icon(Icons.phone_rounded, color: Colors.amber),
-                    title: const Text("Numero de telefono"),
+                    title: const Text("Phone number"),
                     trailing: const Text("3227302199"),
                     onTap: () {},
                   ),
                   ListTile(
                     leading: const Icon(Icons.lock_outline_rounded,
                         color: Colors.amber),
-                    title: const Text("Cambiar contraseña"),
+                    title: const Text("Password change"),
                     trailing: const Icon(Icons.arrow_circle_right),
                     iconColor: Colors.amber[700],
                     onTap: () {},

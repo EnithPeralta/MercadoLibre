@@ -7,7 +7,6 @@ import 'package:mercadolibre/src/screens/HomePage.dart';
 import 'package:mercadolibre/src/screens/Login.dart';
 import 'package:mercadolibre/src/screens/Perfil.dart';
 import 'package:mercadolibre/src/screens/Principal.dart';
-import 'package:mercadolibre/src/screens/Register.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -21,7 +20,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const MenUsers(),
       routes: {
         '/inicio': (context) => const Login(),
         '/registro': (context) => const AddUsers(),
