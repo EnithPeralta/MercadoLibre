@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:mercadolibre/src/screens/ModalUser.dart';
+import 'package:mercadolibre/src/Modals/User.modal.dart';
 
 class MenUsers extends StatefulWidget {
   const MenUsers({super.key});

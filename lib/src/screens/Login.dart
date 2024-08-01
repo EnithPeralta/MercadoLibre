@@ -45,7 +45,7 @@ class _LoginState extends State<Login> {
                   const SizedBox(height: 20),
                   TextField(
                     obscureText: true,
-                    decoration: InputDecoration(                      
+                    decoration: InputDecoration(
                         labelText: "Enter your password",
                         prefixIcon: const Icon(Icons.lock_open_rounded),
                         border: OutlineInputBorder(

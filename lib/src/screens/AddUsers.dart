@@ -17,7 +17,7 @@ class _AddUsersState extends State<AddUsers> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   Future<Users>? _futureUsers;
-  
+
   void _clearControllers() {
     _nombreController.clear();
     _emailController.clear();
@@ -47,8 +47,8 @@ class _AddUsersState extends State<AddUsers> {
                   const SizedBox(height: 16.0),
                   const Text(
                     "Go to Sign Up",
-                    style: TextStyle(
-                        fontSize: 24.0, fontWeight: FontWeight.bold),
+                    style:
+                        TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 8.0),
                   const Text(
@@ -80,7 +80,8 @@ class _AddUsersState extends State<AddUsers> {
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return "Enter your email address";
-                      } else if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)){
+                      } else if (!RegExp(r'^[^@]+@[^@]+\.[^@]+')
+                          .hasMatch(value)) {
                         return 'Please enter a valid email address';
                       }
                       return null;
@@ -114,8 +115,7 @@ class _AddUsersState extends State<AddUsers> {
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return "Enter password confirmation";
-                      }
-                      else if (value != _passwordController.text) {
+                      } else if (value != _passwordController.text) {
                         return "Passwords do not match";
                       }
                       return null;
@@ -129,7 +129,7 @@ class _AddUsersState extends State<AddUsers> {
                         onPressed: () {
                           if (_formKey.currentState?.validate() ?? false) {
                             setState(() {
-                              _futureUsers = addUsers(
+                              createUsers(
                                 _nombreController.text,
                                 _emailController.text,
                                 _passwordController.text,
@@ -138,8 +138,8 @@ class _AddUsersState extends State<AddUsers> {
                             ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
                                     content: Text('Successful registration')));
-                          _clearControllers();
-                          _navigateToLogin();
+                            _clearControllers();
+                            _navigateToLogin();
                           }
                         },
                         style: ElevatedButton.styleFrom(
@@ -162,8 +162,8 @@ class _AddUsersState extends State<AddUsers> {
                         },
                         child: const Text(
                           "Log in",
-                          style: TextStyle(
-                              color: Color.fromRGBO(255, 160, 0, 1)),
+                          style:
+                              TextStyle(color: Color.fromRGBO(255, 160, 0, 1)),
                         ),
                       ),
                     ],

@@ -70,8 +70,10 @@ class HomePage extends StatelessWidget {
                       color: Colors.amber[700],
                     ),
                     IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.notifications_sharp),
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/administrador');
+                      },
+                      icon: const Icon(Icons.admin_panel_settings_outlined),
                       color: Colors.amber[700],
                     )
                   ],
