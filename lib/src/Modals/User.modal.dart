@@ -1,7 +1,7 @@
 // ignore_for_file: file_names, avoid_print, unused_element
 
 import 'package:flutter/material.dart';
-import 'package:mercadolibre/src/controller/ConsultaUsers.dart';
+import 'package:mercadolibre/src/controller/Users.dart';
 
 void modalUsuarios(BuildContext context) {
   fetchUsers().then((userList) {

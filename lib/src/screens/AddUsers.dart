@@ -1,7 +1,7 @@
 // ignore_for_file: file_names, unused_field
 
 import 'package:flutter/material.dart';
-import 'package:mercadolibre/src/controller/ConsultaUsers.dart';
+import 'package:mercadolibre/src/controller/Users.dart';
 
 class AddUsers extends StatefulWidget {
   const AddUsers({super.key});
